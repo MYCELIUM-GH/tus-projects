@@ -307,4 +307,8 @@ body
         margin-top: 32px;
         border-top: var(--clr-surface-a30) 1px solid;
     }
+<<<<<<< HEAD
     /* #endregion FOOTER */
+=======
+    /* #endregion FOOTER */
+>>>>>>> e13d930 (Add navigation bar and footer; update date format in weather display)
