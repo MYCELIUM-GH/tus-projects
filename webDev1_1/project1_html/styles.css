@@ -134,7 +134,7 @@ body
         display: flex;
         justify-content: center;
         gap: 16px;
-        padding: 16px 0;
+        padding: 8px 0;
         margin-bottom: 24px;
         overflow: hidden;
     }
