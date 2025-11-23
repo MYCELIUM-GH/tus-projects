@@ -32,7 +32,7 @@ function weatherShowFn(data)
 	$('#city-name').text(data.name);
 
 	$('#date').text(moment().
-		format('MMMM Do YYYY, h:mm:ss a'));
+		format('YYYY'));
     
     $('#temperature').
 		html(`${Math.round(data.main.temp)}°C`);
