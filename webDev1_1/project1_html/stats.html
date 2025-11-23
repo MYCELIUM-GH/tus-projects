@@ -29,17 +29,13 @@
         </header>
         <!-- ==== ==== ==== ==== NAVIGATION ==== ==== ==== ==== -->
         <nav>
-            <a href="#" style="cursor:not-allowed;">
-                <i style="color:var(--clr-primary-a0);" class="fa-regular fa-house"></i>
+            <a href="./index.html">
+                <i class="fa-regular fa-house"></i>
                 <span class="desc">Homepage</span>
             </a>
-            <a href="./stats.html">
-                <i class="fa-regular fa-chart-bar"></i>
+            <a href="#" style="cursor:not-allowed;">
+                <i style="color:var(--clr-primary-a0);" class="fa-regular fa-chart-bar"></i>
                 <span class="desc">Stats</span>
-            </a>
-            <a href="./news.html">
-                <i class="fa-regular fa-newspaper"></i>
-                <span class="desc">News</span>
             </a>
             <a href="./notes.html">
                 <i class="fa-regular fa-clipboard"></i>
@@ -51,17 +47,19 @@
             </a>
         </nav>
         <!-- ==== ==== ==== ==== MAIN CONTENT ==== ==== ==== ==== -->
-        <div class="notification">
-            <b><p>Not an actual data.</p></b>
-            <p>Please be aware that the information displayed is for demonstration purposes only.</p>
-        </div>
-        <h2 class="section-title">System vitals</h2>
         <section class="block-row">
-            <div class="block animated">
-                <p class="block-left">SERVER</p>
-                <p class="block-right">4xArm Cortex A76@2.4GHz<span></span></p>
-                <p>CPU <span>1%</span></p>
-                <p class="block-right">RAM <span>90%</span></p>
+            <div class="block">
+                <p style="color: var(--clr-success-a0);">
+                    <i class="fa-regular fa-circle-dot"></i>
+                </p>
+                <p class="block-right">Working</p>
+                <p>
+                    <img 
+                        src="https://cdn.jsdelivr.net/gh/selfhst/icons/svg/portainer-v1-light.svg" 
+                        alt="Portainer Icon"
+                    />
+                </p>
+                <p class="block-right">Portainer</p>
             </div>
             <div class="block animated">
                 <p class="block-left">ROM</p>
@@ -76,9 +74,5 @@
                 <p class="block-right">Upload <span>12kbps</span></p>
             </div>
         </section>
-        <!-- ==== ==== ==== ==== FOOTER ==== ==== ==== ==== -->
-        <footer>
-            <p>&copy; <span id="date"></span> MYCELIUM. All rights reserved.</p>
-        </footer>
     </body>
 </html>
