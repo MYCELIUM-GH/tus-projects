@@ -1,4 +1,5 @@
 /* #region COLOURS */
+
 :root 
 {
     /** Base colors */
@@ -64,6 +65,7 @@ body
     
 }
     /* #region HEADER */
+
     header 
     {
         display: flex;
@@ -126,6 +128,7 @@ body
     /* #endregion HEADER */
     
     /* #region NAVBAR */
+
     nav 
     {
         display: flex;
@@ -265,40 +268,109 @@ body
             text-align: right;
             color: var(--clr-surface-a50);
         }
-    @media (max-width: 600px) and (orientation: portrait)
+
+        @media (max-width: 900px) and (orientation: portrait)
+        {
+            .block-row 
+            {
+                flex-direction: column;
+                width: 80vw;
+                align-items: center;
+                justify-content: center;
+                padding: 8px 12px;
+            }
+
+            .notification 
+            {
+                width: 80vw;
+                margin: auto;
+            }
+
+            .block 
+            {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                padding: 12px;
+            }
+            .block,
+            .block-left,
+            .block-right 
+            {
+                text-align: center;
+            }
+        }
+
+    .bulb
     {
-        .block-row 
-        {
-            flex-direction: column;
-            width: 80vw;
-            align-items: center;
-            justify-content: center;
-            padding: 8px 12px;
-        }
+        text-align: center;
+        margin-top: 8px;
+    }
 
-        .notification 
+    .bulb.success
+    {
+        animation: bulbSuccess 4s ease-in-out infinite alternate;
+    }
+    @keyframes bulbSuccess
+    {
+        0%
         {
-            width: 80vw;
-            margin: auto;
+            color: var(--clr-success-a0);
         }
-
-        .block 
+        50%
         {
-            grid-template-columns: 1fr;
-            gap: 12px;
-            padding: 12px;
+            color: var(--clr-success-a10);
         }
-        .block,
-        .block-left,
-        .block-right 
-        {
-            text-align: center;
+        100% 
+        { 
+            color: var(--clr-success-a0);
         }
     }
+
+    .bulb.warning
+    {
+        animation: bulbWarning 4s ease-in-out infinite alternate;
+    }
+    @keyframes bulbWarning
+    {
+        0%
+        {
+            color: var(--clr-warning-a0);
+        }
+        50%
+        {
+            color: var(--clr-warning-a10);
+        }
+        100% 
+        { 
+            color: var(--clr-warning-a0);
+        }
+    }
+
+    .bulb.danger
+    {
+        animation: bulbDanger 4s ease-in-out infinite alternate;
+    }
+    @keyframes bulbDanger
+    {
+        0%
+        {
+            color: var(--clr-danger-a0);
+        }
+        50%
+        {
+            color: var(--clr-danger-a10);
+        }
+        100% 
+        { 
+            color: var(--clr-danger-a0);
+        }
+    }
+
     /* #endregion BLOCKS */
 
     /* #region FOOTER */
-    footer 
+    
+    footer
     {
         text-align: center;
         color: var(--clr-surface-a40);
@@ -307,4 +379,5 @@ body
         margin-top: 32px;
         border-top: var(--clr-surface-a30) 1px solid;
     }
+    
     /* #endregion FOOTER */

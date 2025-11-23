@@ -48,30 +48,47 @@
         </nav>
         <!-- ==== ==== ==== ==== MAIN CONTENT ==== ==== ==== ==== -->
         <section class="block-row">
-            <div class="block">
-                <p style="color: var(--clr-success-a0);">
-                    <i class="fa-regular fa-circle-dot"></i>
-                </p>
-                <p class="block-right">Working</p>
-                <p>
-                    <img 
-                        src="https://cdn.jsdelivr.net/gh/selfhst/icons/svg/portainer-v1-light.svg" 
-                        alt="Portainer Icon"
-                    />
-                </p>
-                <p class="block-right">Portainer</p>
+            <div class="block" style="display:flex;align-items:center;gap:6px;">
+                <img
+                    src="https://cdn.jsdelivr.net/gh/selfhst/icons/svg/portainer-v1-light.svg" 
+                    alt="Portainer Icon" 
+                    style="width:32px;height:32px;display:inline-block;vertical-align:middle;"
+                />
+                <div style="display:flex;flex-direction:row;gap:8px;">
+                    <span>Portainer</span>
+                    <span class="bulb success" style="margin:0;">
+                        <i class="fa-regular fa-circle-dot"></i>
+                    </span>
+                    <span class="block-right" style="margin:0;">RUNNING</span>
+                </div>
             </div>
-            <div class="block animated">
-                <p class="block-left">ROM</p>
-                <p class="block-right">Used <span>4.021GiB</span></p>
-                <p>Total <span>256GiB</span></p>
-                <p class="block-right">Free <span>252GiB</span></p>
+            <div class="block" style="display:flex;align-items:center;gap:6px;">
+                <img
+                    src="https://cdn.jsdelivr.net/gh/selfhst/icons/svg/docs-collaboration-light.svg" 
+                    alt="Docs Icon" 
+                    style="width:32px;height:32px;display:inline-block;vertical-align:middle;"
+                />
+                <div style="display:flex;flex-direction:row;gap:8px;">
+                    <span>Docs</span>
+                    <span class="bulb warning" style="margin:0;">
+                        <i class="fa-regular fa-circle-dot"></i>
+                    </span>
+                    <span class="block-right" style="margin:0;">WARNING</span>
+                </div>
             </div>
-            <div class="block animated">
-                <p class="block-left">NETWORK</p>
-                <p class="block-right">Download <span>52kbps</span></p>
-                <p>wlan0</p>
-                <p class="block-right">Upload <span>12kbps</span></p>
+            <div class="block" style="display:flex;align-items:center;gap:6px;">
+                <img
+                    src="https://cdn.jsdelivr.net/gh/selfhst/icons/svg/portainer-v1-light.svg" 
+                    alt="Portainer Icon" 
+                    style="width:32px;height:32px;display:inline-block;vertical-align:middle;"
+                />
+                <div style="display:flex;flex-direction:row;gap:8px;">
+                    <span>Portainer</span>
+                    <span class="bulb danger" style="margin:0;">
+                        <i class="fa-regular fa-circle-dot"></i>
+                    </span>
+                    <span class="block-right" style="margin:0;">FAILURE</span>
+                </div>
             </div>
         </section>
     </body>
