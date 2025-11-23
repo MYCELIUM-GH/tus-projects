@@ -50,6 +50,7 @@
     --clr-info-a20: #92b2e5;
 }
 /* #endregion COLOURS */
+
 body 
 {
     font-family: Montserrat, sans-serif;
@@ -123,6 +124,58 @@ body
                 color: var(--clr-surface-tonal-a30);
             }
     /* #endregion HEADER */
+    
+    /* #region NAVBAR */
+    nav 
+    {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        padding: 16px 0;
+        margin-bottom: 24px;
+        overflow: hidden;
+    }
+
+        nav a 
+        {
+            color: var(--clr-light-a0);
+            font-size: 24px;
+            text-decoration: none;
+            transition: transform 0.5s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 4%;
+        }
+
+        nav a:hover 
+        {
+            transform: scale(120%);
+        }
+        nav a i
+        {
+            color: var(--clr-light-a0);
+        }
+        nav a .desc
+        {
+            display: inline-block;
+            max-width: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: 14px;
+            opacity: 0;
+            transition: max-width 0.5s ease, opacity 0.5s ease;
+        }
+
+        nav a:hover .desc,
+        nav a:focus .desc
+        {
+            max-width: 240px;
+            opacity: 1;
+            
+        }
+    /* #endregion NAVBAR */
+
     /* #region BLOCKS */
     
     .notification 
@@ -212,8 +265,10 @@ body
             text-align: right;
             color: var(--clr-surface-a50);
         }
-    @media (max-width: 600px) and (orientation: portrait){
-        .block-row {
+    @media (max-width: 600px) and (orientation: portrait)
+    {
+        .block-row 
+        {
             flex-direction: column;
             width: 80vw;
             align-items: center;
@@ -221,20 +276,35 @@ body
             padding: 8px 12px;
         }
 
-        .notification {
+        .notification 
+        {
             width: 80vw;
             margin: auto;
         }
 
-        .block {
+        .block 
+        {
             grid-template-columns: 1fr;
             gap: 12px;
             padding: 12px;
         }
         .block,
         .block-left,
-        .block-right {
+        .block-right 
+        {
             text-align: center;
         }
     }
     /* #endregion BLOCKS */
+
+    /* #region FOOTER */
+    footer 
+    {
+        text-align: center;
+        color: var(--clr-surface-a40);
+        font-size: 14px;
+        padding: 16px 0;
+        margin-top: 32px;
+        border-top: var(--clr-surface-a30) 1px solid;
+    }
+    /* #endregion FOOTER */
