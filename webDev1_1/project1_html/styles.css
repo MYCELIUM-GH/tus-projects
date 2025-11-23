@@ -74,7 +74,7 @@ body
         header h2 
         {
             font-size: 2em;
-            color: var(--clr-primary-a10);
+            color: var(--clr-primary-a0);
         }
         
         .weather-container-col
@@ -125,10 +125,17 @@ body
     /* #endregion HEADER */
     /* #region BLOCKS */
     
+    .section-title 
+    {
+        text-align: center;
+        color: var(--clr-primary-a10);
+        font-size: 24px;
+        margin: 24px auto;
+    }
     .notification 
     {
-        width: 60%;
-        margin: auto;
+        width: 60vw;
+        margin: 12px auto;
         text-align: left;
         background-color: var(--clr-warning-a20);
         color: var(--clr-dark-a0);
@@ -142,7 +149,7 @@ body
         display: flex;
         flex-direction: row;
         justify-content: center;
-        width: 80%;
+        width: 60vw;
         gap: 20px;
         padding: 8px 20px;
         box-sizing: border-box;
@@ -173,4 +180,29 @@ body
             text-align: right;
             color: var(--clr-surface-a50);
         }
+    @media (max-width: 600px) and (orientation: portrait){
+        .block-row {
+            flex-direction: column;
+            width: 80vw;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 12px;
+        }
+
+        .notification {
+            width: 80vw;
+            margin: auto;
+        }
+
+        .block {
+            grid-template-columns: 1fr;
+            gap: 12px;
+            padding: 12px;
+        }
+        .block,
+        .block-left,
+        .block-right {
+            text-align: center;
+        }
+    }
     /* #endregion BLOCKS */
