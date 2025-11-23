@@ -1,19 +1,19 @@
 /* #region COLOURS */
 :root 
 {
-    /** Base colours */
+    /** Base colors */
     --clr-dark-a0: #000000;
     --clr-light-a0: #ffffff;
 
-    /** Theme primary colours */
-    --clr-primary-a0: #f934f5;
-    --clr-primary-a10: #fc58f7;
-    --clr-primary-a20: #ff73f8;
-    --clr-primary-a30: #ff8af9;
-    --clr-primary-a40: #ff9ffb;
-    --clr-primary-a50: #ffb3fc;
+    /** Theme primary colors */
+    --clr-primary-a0: #00fa6c;
+    --clr-primary-a10: #4ffb7e;
+    --clr-primary-a20: #71fd8e;
+    --clr-primary-a30: #8bfe9f;
+    --clr-primary-a40: #a2ffaf;
+    --clr-primary-a50: #b7ffbf;
 
-    /** Theme surface colours */
+    /** Theme surface colors */
     --clr-surface-a0: #121212;
     --clr-surface-a10: #282828;
     --clr-surface-a20: #3f3f3f;
@@ -21,30 +21,30 @@
     --clr-surface-a40: #717171;
     --clr-surface-a50: #8b8b8b;
 
-    /** Theme tonal surface colours */
-    --clr-surface-tonal-a0: #261925;
-    --clr-surface-tonal-a10: #3b2e39;
-    --clr-surface-tonal-a20: #50454f;
-    --clr-surface-tonal-a30: #675d66;
-    --clr-surface-tonal-a40: #7f767e;
-    --clr-surface-tonal-a50: #978f96;
+    /** Theme tonal surface colors */
+    --clr-surface-tonal-a0: #1a261b;
+    --clr-surface-tonal-a10: #2f3a30;
+    --clr-surface-tonal-a20: #465046;
+    --clr-surface-tonal-a30: #5e675e;
+    --clr-surface-tonal-a40: #767e77;
+    --clr-surface-tonal-a50: #909790;
 
-    /** Success colours */
+    /** Success colors */
     --clr-success-a0: #22946e;
     --clr-success-a10: #47d5a6;
     --clr-success-a20: #9ae8ce;
 
-    /** Warning colours */
+    /** Warning colors */
     --clr-warning-a0: #a87a2a;
     --clr-warning-a10: #d7ac61;
     --clr-warning-a20: #ecd7b2;
 
-    /** Danger colours */
+    /** Danger colors */
     --clr-danger-a0: #9c2121;
     --clr-danger-a10: #d94a4a;
     --clr-danger-a20: #eb9e9e;
 
-    /** Info colours */
+    /** Info colors */
     --clr-info-a0: #21498a;
     --clr-info-a10: #4077d1;
     --clr-info-a20: #92b2e5;
@@ -52,13 +52,14 @@
 /* #endregion COLOURS */
 body 
 {
-    font-family: Arial, sans-serif;
+    font-family: Montserrat, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url(./public/images/background.jpg);
+    /* background-image: url(./public/images/background.jpg);
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: fixed; */
+    background-color: var(--clr-surface-a0);
     
 }
     /* #region HEADER */
@@ -73,7 +74,7 @@ body
         header h2 
         {
             font-size: 2em;
-            
+            color: var(--clr-primary-a10);
         }
         
         .weather-container-col
@@ -117,33 +118,59 @@ body
             
             #description 
             {
-                padding: 10px;
+                padding: 8px;
                 margin: 0;
+                color: var(--clr-surface-tonal-a30);
             }
     /* #endregion HEADER */
     /* #region BLOCKS */
-    .filter 
-    {
-        background-color: rgba(51, 46, 82, 0.077);
-        backdrop-filter: blur(4px);
-    }
     
+    .notification 
+    {
+        width: 60%;
+        margin: auto;
+        text-align: left;
+        background-color: var(--clr-warning-a20);
+        color: var(--clr-dark-a0);
+        padding: 8px 32px;
+        font-size: 14px;
+        border-left: var(--clr-warning-a10) 8px solid;
+        border-radius: 16px;
+    }
     .block-row 
     {
         display: flex;
         flex-direction: row;
         justify-content: center;
+        width: 80%;
         gap: 20px;
-        padding: 20px;
+        padding: 8px 20px;
+        box-sizing: border-box;
+        margin-inline: auto;
     }
         
-        .block 
+    .block 
+    {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        width: 100%;
+        color: var(--clr-light-a0);
+        padding: 16px;
+        border: var(--clr-surface-a30) 1px solid;
+        border-radius: 16px;
+        font-size: 16px;
+    }
+
+        .block-left 
         {
-            color: var(--clr-light-a0);
-            padding: 20px;
-            border: rgba(107, 142, 184, 0.122) 4px solid;
-            border-radius: 16px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.446);
             text-align: left;
+            font-weight: bold;
+        }
+
+        .block-right 
+        {
+            text-align: right;
+            color: var(--clr-surface-a50);
         }
     /* #endregion BLOCKS */
