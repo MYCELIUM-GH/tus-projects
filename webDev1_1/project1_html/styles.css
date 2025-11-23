@@ -133,7 +133,7 @@ body
     {
         display: flex;
         justify-content: center;
-        gap: 32px;
+        gap: 16px;
         padding: 16px 0;
         margin-bottom: 24px;
         overflow: hidden;
@@ -379,5 +379,5 @@ body
         margin-top: 32px;
         border-top: var(--clr-surface-a30) 1px solid;
     }
-    
+
     /* #endregion FOOTER */
