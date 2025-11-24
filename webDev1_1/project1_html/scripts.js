@@ -1,3 +1,4 @@
+// WEATHER FETHCHING
 const url =
 	'https://api.openweathermap.org/data/2.5/weather';
 const apiKey =
@@ -23,12 +24,19 @@ async function weatherFn(cName)
 		weatherShowFn(data);
 	} catch (error) 
     {
-		console.error('Error fetching weather data:', error);
+		console.error('Error code:', error);
 	}
 }
 
 function weatherShowFn(data) 
 {
+	const desc = data.weather[0].description || '';
+
+    const formattedDesc = desc
+        .split(' ')
+        .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(' ');
+    
 	$('#city-name').text(data.name);
 
 	$('#date').text(moment().
@@ -37,17 +45,7 @@ function weatherShowFn(data)
     $('#temperature').
 		html(`${Math.round(data.main.temp)}°C`);
     
-    const desc = data.weather[0].description || '';
-
-    const formattedDesc = desc
-        .split(' ')
-        .map(w => w.charAt(0).toUpperCase() + w.slice(1))
-        .join(' ');
-    
     $('#description').text(formattedDesc);
-
-	$('#wind-speed').
-		html(`Wind Speed: ${data.wind.speed} m/s`);
 
     $('#weather-icon').
         attr('src', `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`);

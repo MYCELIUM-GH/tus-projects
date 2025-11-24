@@ -366,7 +366,26 @@ body
         }
     }
 
+
+
     /* #endregion BLOCKS */
+
+    /* #region REDDIT */
+
+    .reddit
+    {
+        width: 60vw;
+        margin: 0 auto 4vh auto;
+        text-align: left;
+        background-color: var(--clr-surface-a10);
+        color: var(--clr-light-a0);
+        padding: 16px 32px;
+        font-size: 14px;
+        border: var(--clr-surface-a30) 1px solid;
+        border-radius: 16px;
+    }
+
+    /* #endregion REDDIT */
 
     /* #region FOOTER */
     
