@@ -314,7 +314,7 @@ body
         {
             font-size: 16px;
         }
-        
+
         .reddit-post p
         {
             font-size: 14px;
@@ -403,6 +403,12 @@ body
             .block-right 
             {
                 text-align: center;
+            }
+
+            .reddit
+            {
+                width: 80vw;
+                margin: auto;
             }
         }
 
