@@ -5,6 +5,25 @@ function createPostElement(postData)
 
     const title = postData.title;
     const permalink = postData.permalink;
+    const date = postData.created_utc ? new Date(postData.created_utc * 1000) : new Date();
+    const timeAgo = (() => 
+    {
+        const seconds = Math.floor((Date.now() - date.getTime()) / 1000);
+        if (seconds < 60) return `${seconds}s ago`;
+        const minutes = Math.floor(seconds / 60);
+        if (minutes < 60) return `${minutes}m ago`;
+        const hours = Math.floor(minutes / 60);
+        if (hours < 24) return `${hours}h ago`;
+        const days = Math.floor(hours / 24);
+        if (days < 7) return `${days}d ago`;
+        const weeks = Math.floor(days / 7);
+        if (weeks < 4) return `${weeks}w ago`;
+        const months = Math.floor(days / 30);
+        if (months < 12) return `${months}mo ago`;
+        const years = Math.floor(days / 365);
+        return `${years}y ago`;
+    })();
+
     const ups = postData.ups;
     const comments = postData.num_comments;
 
@@ -13,7 +32,7 @@ function createPostElement(postData)
         <a href="https://www.reddit.com${permalink}" target="_blank">
             <h3>${title}</h3>
         </a>
-        <p>upvotes: ${ups} | comments: ${comments}</p>
+        <p>${timeAgo}&nbsp;&nbsp;•&nbsp;&nbsp;${ups} upvotes&nbsp;&nbsp;•&nbsp;&nbsp;${comments} comments</p>
     `;
     return postElement;
 }
@@ -29,8 +48,8 @@ function displayRedditPosts(data)
             const postElement = createPostElement(post.data);
             container.appendChild(postElement);
         });
-    } 
-    else 
+    }
+    else
     {
         container.innerHTML += '<p>No posts found or data structure is unexpected.</p>';
     }
@@ -54,7 +73,7 @@ fetch(redditUrl)
     .catch(error => 
     {
         console.error("Error fetching Reddit posts:", error);
-        // Ensure the container exists before trying to update its content
+        
         const container = document.querySelector('.reddit.r-selfhosted');
         if (container) 
         {

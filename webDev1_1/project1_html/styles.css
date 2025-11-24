@@ -199,19 +199,7 @@ body
         text-align: center;
         color: var(--clr-light-a0);
         font-size: 24px;
-        margin: 24px auto;
-    }
-
-    .block-row 
-    {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        width: 60vw;
-        gap: 20px;
-        padding: 8px 20px;
-        box-sizing: border-box;
-        margin-inline: auto;
+        margin: 48px auto 24px auto;
     }
         
     .block 
@@ -226,6 +214,28 @@ body
         border: var(--clr-surface-a30) 1px solid;
         border-radius: 16px;
         font-size: 16px;
+    }
+    .block-row 
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 60vw;
+        gap: 20px;
+        padding: 8px 20px;
+        box-sizing: border-box;
+        margin-inline: auto;
+    }
+    .block-col
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60vw;
+        gap: 8px;
+        padding: 2px 20px;
+        box-sizing: border-box;
+        margin-inline: auto;
     }
 
         .block.animated:hover
@@ -366,8 +376,6 @@ body
         }
     }
 
-
-
     /* #endregion BLOCKS */
 
     /* #region REDDIT */
@@ -377,13 +385,41 @@ body
         width: 60vw;
         margin: 0 auto 4vh auto;
         text-align: left;
-        background-color: var(--clr-surface-a10);
         color: var(--clr-light-a0);
         padding: 16px 32px;
-        font-size: 14px;
-        border: var(--clr-surface-a30) 1px solid;
-        border-radius: 16px;
+        border-radius: 8px;
     }
+    .reddit-post
+    {
+        margin-bottom: 16px;
+        padding-bottom: 0;
+        border-bottom: var(--clr-surface-a30) 1px solid;
+    }
+        .reddit-post:last-child
+        {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .reddit-post a
+        {
+            color: var(--clr-primary-a10);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .reddit-post a:hover
+        {
+            text-decoration: underline;
+        }
+        .reddit-post a h3
+        {
+            font-size: 16px;
+        }
+        .reddit-post p
+        {
+            font-size: 14px;
+            color: var(--clr-surface-tonal-a30);
+        }
 
     /* #endregion REDDIT */
 
