@@ -98,12 +98,7 @@ body
             {
                 vertical-align: middle;
             }
-            
-            #city-name::before
-            {
-                content: "\00a0\00a0";
-            }
-            
+
             #city-name, #temperature 
             {
                 vertical-align: middle;
@@ -117,7 +112,7 @@ body
             
             #description 
             {
-                padding: 8px;
+                padding: 8px 0;
                 margin: 0;
                 color: var(--clr-surface-tonal-a30);
             }
@@ -129,9 +124,7 @@ body
     {
         display: flex;
         justify-content: center;
-        gap: 16px;
-        padding: 8px 0;
-        margin-bottom: 24px;
+        padding: 8px;
         overflow: hidden;
     }
 
@@ -141,10 +134,7 @@ body
             font-size: 24px;
             text-decoration: none;
             transition: transform 0.5s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 4%;
+            padding: 8px 6vw;
         }
 
         nav a:hover 
@@ -422,9 +412,14 @@ body
                 padding: 2px;
                 text-align: left;
             }
-            nav a
+            nav a 
             {
-                padding: 8px 2%;
+                font-size: 20px;
+                padding: 8px 4vw;
+            }
+            nav a .desc
+            {
+                display: none;
             }
             .block-row 
             {
