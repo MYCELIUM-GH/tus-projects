@@ -60,6 +60,27 @@ body
     background-color: var(--clr-surface-a0);
     
 }
+    .notification 
+    {
+        max-width: 60vw;
+        margin: 0 auto 4vh auto;
+        text-align: left;
+        background-color: var(--clr-warning-a20);
+        color: var(--clr-dark-a0);
+        padding: 8px 32px;
+        font-size: 14px;
+        border-left: var(--clr-warning-a10) 8px solid;
+        border-radius: 16px;
+    }
+
+    .section-title 
+    {
+        text-align: center;
+        color: var(--clr-light-a0);
+        font-size: 24px;
+        margin: 48px auto 24px auto;
+    }
+
     /* #region HEADER */
 
     header 
@@ -166,28 +187,7 @@ body
     /* #endregion NAVBAR */
 
     /* #region BLOCKS */
-    
-    .notification 
-    {
-        width: 60vw;
-        margin: 0 auto 4vh auto;
-        text-align: left;
-        background-color: var(--clr-warning-a20);
-        color: var(--clr-dark-a0);
-        padding: 8px 32px;
-        font-size: 14px;
-        border-left: var(--clr-warning-a10) 8px solid;
-        border-radius: 16px;
-    }
-
-    .section-title 
-    {
-        text-align: center;
-        color: var(--clr-light-a0);
-        font-size: 24px;
-        margin: 48px auto 24px auto;
-    }
-        
+          
     .block 
     {
         display: grid;
@@ -201,6 +201,7 @@ body
         border-radius: 16px;
         font-size: 16px;
     }
+
     .block-row 
     {
         display: flex;
@@ -212,6 +213,7 @@ body
         box-sizing: border-box;
         margin-inline: auto;
     }
+
     .block-col
     {
         display: flex;
@@ -230,29 +232,11 @@ body
             animation: borderShift 6s ease-in-out infinite alternate;
         }
 
-        @keyframes borderShift
-        {
-            0%
-            {
-                border-color: var(--clr-surface-a30);
-                box-shadow: 0 0 0 var(--clr-surface-a0);
-            }
-            50%
-            {
-                border-color: var(--clr-primary-a20);
-                box-shadow: 0 0 8px var(--clr-primary-a40);
-            }
-            100% 
-            { 
-                border-color: var(--clr-surface-a30);
-                box-shadow: 0 0 0 var(--clr-surface-a0);
-            }
-        }
-
         .block p 
         {
             margin: 0;
         }
+
         .block-left 
         {
             text-align: left;
@@ -271,65 +255,20 @@ body
         margin-top: 8px;
     }
 
-    .bulb.success
-    {
-        animation: bulbSuccess 4s ease-in-out infinite alternate;
-    }
-    @keyframes bulbSuccess
-    {
-        0%
+        .bulb.success
         {
-            color: var(--clr-success-a0);
+            animation: bulbSuccess 4s ease-in-out infinite alternate;
         }
-        50%
-        {
-            color: var(--clr-success-a10);
-        }
-        100% 
-        { 
-            color: var(--clr-success-a0);
-        }
-    }
 
-    .bulb.warning
-    {
-        animation: bulbWarning 4s ease-in-out infinite alternate;
-    }
-    @keyframes bulbWarning
-    {
-        0%
+        .bulb.warning
         {
-            color: var(--clr-warning-a0);
+            animation: bulbWarning 4s ease-in-out infinite alternate;
         }
-        50%
-        {
-            color: var(--clr-warning-a10);
-        }
-        100% 
-        { 
-            color: var(--clr-warning-a0);
-        }
-    }
 
-    .bulb.danger
-    {
-        animation: bulbDanger 4s ease-in-out infinite alternate;
-    }
-    @keyframes bulbDanger
-    {
-        0%
+        .bulb.danger
         {
-            color: var(--clr-danger-a0);
+            animation: bulbDanger 4s ease-in-out infinite alternate;
         }
-        50%
-        {
-            color: var(--clr-danger-a10);
-        }
-        100% 
-        { 
-            color: var(--clr-danger-a0);
-        }
-    }
 
     /* #endregion BLOCKS */
 
@@ -344,32 +283,38 @@ body
         padding: 16px 32px;
         border-radius: 8px;
     }
+
     .reddit-post
     {
         margin-bottom: 16px;
         padding-bottom: 0;
         border-bottom: var(--clr-surface-a30) 1px solid;
     }
+
         .reddit-post:last-child
         {
             border-bottom: none;
             margin-bottom: 0;
             padding-bottom: 0;
         }
+
         .reddit-post a
         {
             color: var(--clr-primary-a10);
             text-decoration: none;
             font-weight: bold;
         }
+
         .reddit-post a:hover
         {
             text-decoration: underline;
         }
+
         .reddit-post a h3
         {
             font-size: 16px;
         }
+        
         .reddit-post p
         {
             font-size: 14px;
@@ -395,32 +340,37 @@ body
     /* #region MEDIA QUERIES */
 
     @media (max-width: 900px)
-        {
+    {
             header h2 
             {
                 font-size: 1.5em;
             }
-            #weather-icon 
+
+            #weather-icon
+
             {
                 height: 32px;
                 width: 32px;
                 vertical-align: middle;
             }
+
             #city-name, #temperature, #description
             {
                 font-size: 0.8em;
                 padding: 2px;
                 text-align: left;
             }
+
             nav a 
             {
                 font-size: 20px;
                 padding: 8px 4vw;
             }
-            nav a .desc
-            {
-                display: none;
-            }
+                nav a .desc
+                {
+                    display: none;
+                }
+
             .block-row 
             {
                 flex-direction: column;
@@ -429,6 +379,7 @@ body
                 justify-content: center;
                 padding: 8px 12px;
             }
+
             .block-col
             {
                 width: 80vw;
@@ -446,6 +397,7 @@ body
                 gap: 12px;
                 padding: 12px;
             }
+
             .block,
             .block-left,
             .block-right 
@@ -455,3 +407,74 @@ body
         }
 
     /* #endregion MEDIA QUERIES */
+    
+    /* #region ANIMATIONS */
+
+    @keyframes borderShift
+    {
+        0%
+        {
+            border-color: var(--clr-surface-a30);
+            box-shadow: 0 0 0 var(--clr-surface-a0);
+        }
+        50%
+        {
+            border-color: var(--clr-primary-a20);
+            box-shadow: 0 0 8px var(--clr-primary-a40);
+        }
+        100% 
+        { 
+            border-color: var(--clr-surface-a30);
+            box-shadow: 0 0 0 var(--clr-surface-a0);
+        }
+    }
+
+    @keyframes bulbSuccess
+    {
+        0%
+        {
+            color: var(--clr-success-a0);
+        }
+        50%
+        {
+            color: var(--clr-success-a10);
+        }
+        100% 
+        { 
+            color: var(--clr-success-a0);
+        }
+    }
+
+    @keyframes bulbWarning
+    {
+        0%
+        {
+            color: var(--clr-warning-a0);
+        }
+        50%
+        {
+            color: var(--clr-warning-a10);
+        }
+        100% 
+        { 
+            color: var(--clr-warning-a0);
+        }
+    }
+
+    @keyframes bulbDanger
+    {
+        0%
+        {
+            color: var(--clr-danger-a0);
+        }
+        50%
+        {
+            color: var(--clr-danger-a10);
+        }
+        100% 
+        { 
+            color: var(--clr-danger-a0);
+        }
+    }
+
+    /* #endregion ANIMATIONS */
