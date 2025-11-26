@@ -1,31 +1,15 @@
-// WEATHER FETHCHING
 const url =
 	'https://api.openweathermap.org/data/2.5/weather';
 const apiKey =
 	'f00c38e0279b7bc85480c3fe775d518c';
 
-$(document).ready
-(
-    function () 
-    {
-	    weatherFn('Athlone');
-    }
-);
-
 async function weatherFn(cName) 
 {
-	const temp =
-		`${url}?q=${cName}&appid=${apiKey}&units=metric`;
-	try 
-    {
-		const res = await fetch(temp);
-		const data = await res.json();
+	const temp = `${url}?q=${cName}&appid=${apiKey}&units=metric`;
+	const res = await fetch(temp);
+	const data = await res.json();
 		
-		weatherShowFn(data);
-	} catch (error) 
-    {
-		console.error('Error code:', error);
-	}
+	weatherShowFn(data);
 }
 
 function weatherShowFn(data) 
@@ -50,3 +34,8 @@ function weatherShowFn(data)
     $('#weather-icon').
         attr('src', `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`);
 }
+
+$(document).ready
+(
+    function () { weatherFn('Athlone'); }
+);

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>IRONHILLS | Home</title>
+        <title>IRONHILLS | Notes</title>
         <link rel="stylesheet" href="styles.css?v=0042261125">
 		<script src="https://kit.fontawesome.com/2dbede4c2f.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
@@ -29,8 +29,8 @@
         </header>
         <!-- ==== ==== ==== ==== NAVIGATION ==== ==== ==== ==== -->
         <nav>
-            <a href="#" style="cursor:not-allowed;">
-                <i style="color:var(--clr-primary-a0);" class="fa-regular fa-house"></i>
+            <a href="./index.html">
+                <i class="fa-regular fa-house"></i>
                 <span class="desc">Homepage</span>
             </a>
             <a href="./stats.html">
@@ -41,8 +41,8 @@
                 <i class="fa-regular fa-newspaper"></i>
                 <span class="desc">News</span>
             </a>
-            <a href="./notes.html">
-                <i class="fa-regular fa-clipboard"></i>
+            <a href="./notes.html" style="cursor:not-allowed;">
+                <i style="color:var(--clr-primary-a0);" class="fa-regular fa-clipboard"></i>
                 <span class="desc">Notes</span>
             </a>
             <a href="./personal.html">
@@ -50,35 +50,18 @@
                 <span class="desc">Personal</span>
             </a>
         </nav>
+        <h2 class="section-title">Notes</h2>
         <!-- ==== ==== ==== ==== MAIN CONTENT ==== ==== ==== ==== -->
-        <div class="notification">
-            <b><p>Not an actual data.</p></b>
-            <p>Please be aware that the information displayed is for demonstration purposes only.</p>
+        <div class="note-container">
+            <textarea id="note-input" placeholder="..."></textarea>
+            <div class="buttons">
+                <button id="save-button">Save</button>
+                <button id="clear-button" class="secondary-button">Clear</button>
+            </div>
+            <p id="status-message"></p>
+            <div id="note-display">
+            </div>
         </div>
-        <h2 class="section-title">System vitals</h2>
-        <section class="block-row">
-            <div class="block animated">
-                <p class="block-left">SERVER</p>
-                <p class="block-right">4xArm Cortex A76@2.4GHz<span></span></p>
-                <p>CPU <span>1%</span></p>
-                <p class="block-right">RAM <span>90%</span></p>
-            </div>
-            <div class="block animated">
-                <p class="block-left">ROM</p>
-                <p class="block-right">Used <span>4.021GiB</span></p>
-                <p>Total <span>256GiB</span></p>
-                <p class="block-right">Free <span>252GiB</span></p>
-            </div>
-            <div class="block animated">
-                <p class="block-left">NETWORK</p>
-                <p class="block-right">Download <span>52kbps</span></p>
-                <p>wlan0</p>
-                <p class="block-right">Upload <span>12kbps</span></p>
-            </div>
-        </section>
-        <!-- ==== ==== ==== ==== FOOTER ==== ==== ==== ==== -->
-        <footer>
-            <p>&copy; <span id="date"></span> MYCELIUM. All rights reserved.</p>
-        </footer>
+        <script src="./make-note.js"></script>
     </body>
 </html>

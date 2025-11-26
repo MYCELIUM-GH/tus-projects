@@ -1,3 +1,5 @@
+const redditUrl = 'https://www.reddit.com/r/selfhosted/top.json?limit=5&t=day';
+
 function createPostElement(postData) 
 {
     const postElement = document.createElement('div');
@@ -40,43 +42,22 @@ function createPostElement(postData)
 function displayRedditPosts(data) 
 {
     const container = document.querySelector('.reddit.r-selfhosted'); 
-    
-    if (data.data && data.data.children) 
+
+    data.data.children.forEach(post => 
     {
-        data.data.children.forEach(post => 
-        {
-            const postElement = createPostElement(post.data);
-            container.appendChild(postElement);
-        });
-    }
-    else
-    {
-        container.innerHTML += '<p>No posts found or data structure is unexpected.</p>';
-    }
+        const postElement = createPostElement(post.data);
+        container.appendChild(postElement);
+    });
 }
 
-const redditUrl = 'https://www.reddit.com/r/selfhosted/top.json?limit=5&t=day';
-
 fetch(redditUrl)
-    .then(response => 
+    .then(response => { return response.json(); })
+    .then(data => { displayRedditPosts(data); })
+    .catch(() => 
     {
-        if (!response.ok) 
-        {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => 
-    {
-        displayRedditPosts(data);
-    })
-    .catch(error => 
-    {
-        console.error("Error fetching Reddit posts:", error);
-        
         const container = document.querySelector('.reddit.r-selfhosted');
         if (container) 
         {
-             container.innerHTML += '<p>Could not load Reddit posts due to a network error.</p>';
+             container.innerHTML += '<p style="text-align:center;">Nothing to show;p</p>';
         }
     });
