@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>IRONHILLS | Report</title>
+        <link rel="stylesheet" href="styles.css?v=0200261125">
+		<script src="https://kit.fontawesome.com/2dbede4c2f.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+        <link rel="icon" href="./public/images/favicon.svg" type="image/svg+xml">
+    </head>
+    <body>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+        <!-- ==== ==== ==== ==== HEADER ==== ==== ==== ==== -->
+        <header>
+            <h2>IRONHILLS</h2>
+            <!-- WEATHER WIDGET -->
+            <div style="display:flex;align-items:center;gap:12px;">
+                <img id="weather-icon" src="" alt="Weather Icon">
+                <div class="weather-container-col">
+                    <div class="weather-container-row">
+                        <p id="city-name"></p>
+                        <p id="temperature"></p>
+                    </div>
+                    <p id="description"></p>
+                </div>
+            </div>
+            <script src="./fetch-env.js"></script>
+        </header>
+        <!-- ==== ==== ==== ==== NAVIGATION ==== ==== ==== ==== -->
+        <nav>
+            <a href="./index.html">
+                <i class="fa-regular fa-house"></i>
+                <span class="desc">Homepage</span>
+            </a>
+            <a href="./stats.html">
+                <i class="fa-regular fa-chart-bar"></i>
+                <span class="desc">Stats</span>
+            </a>
+            <a href="./news.html">
+                <i class="fa-regular fa-newspaper"></i>
+                <span class="desc">News</span>
+            </a>
+            <a href="./notes.html">
+                <i class="fa-regular fa-clipboard"></i>
+                <span class="desc">Notes</span>
+            </a>
+            <a href="#" style="cursor:not-allowed;">
+                <i style="color:var(--clr-primary-a0);" class="fa-regular fa-user"></i>
+                <span class="desc">Personal</span>
+            </a>
+        </nav>
+        <!-- ==== ==== ==== ==== MAIN CONTENT ==== ==== ==== ==== -->
+        <div class="block block-col report">
+            <h2>Project Report</h2>
+            <p>
+                This page documents each site page, the markup and 
+                styling used, responsiveness and a short description 
+                of functionality and technologies.
+            </p>
+            <table>
+                <caption>Page functionality and technologies</caption>
+                <thead>
+                    <tr>
+                        <th>Page</th>
+                        <th>Markup</th>
+                        <th>Responsive</th>
+                        <th>CSS / Frameworks</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="./index.html">Home</a></td>
+                        <td>HTML5</td>
+                        <td>Yes</td>
+                        <td>CSS3 (Flexbox, Grid), Google Fonts, Font Awesome</td>
+                        <td>
+                            Primary landing page with header, navigation 
+                            and a weather widget. Uses fetch to call a 
+                            weather API and displays icons. Responsive 
+                            layout uses Flexbox and media queries. 
+                            Hard part: making the header/nav collapse 
+                            and align consistently across breakpoints.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="./stats.html">Stats</a></td>
+                        <td>HTML5</td>
+                        <td>Yes</td>
+                        <td>CSS3</td>
+                        <td>
+                            Displays mock server statistics. 
+                            Emphasis on clear data presentation with
+                            readable typography and spacing.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="./news.html">News</a></td>
+                        <td>HTML5</td>
+                        <td>Yes</td>
+                        <td>CSS3</td>
+                        <td>
+                            Aggregates news items and links. 
+                            Uses anchor elements for external articles 
+                            and internal navigation to full articles. 
+                            Emphasis on readable typographic scale and 
+                            responsive layout.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="./notes.html">Notes</a></td>
+                        <td>HTML5</td>
+                        <td>Yes</td>
+                        <td>CSS3</td>
+                        <td>
+                            Simple notes/clipboard interface for me. 
+                            Includes form controls and client-side validation. 
+                            Styling focuses on contrast and touch targets for mobile.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Report (this page)</td>
+                        <td>HTML5</td>
+                        <td>Almost</td>
+                        <td>CSS3 (table styling)</td>
+                        <td>
+                            Documentation page describing each site page, 
+                            technologies used and implementation notes. 
+                            Accessible from the main menu.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <section>
+                <h2>External libraries & tools</h2>
+                <ul>
+                    <li>JS (pls don't blame me)</li>
+                    <li>Moment.js for date/time formatting</li>
+                    <li>Font Awesome for icons</li>
+                    <li>API for external weather requests</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Notes on implementation</h2>
+                <ul>
+                    <li>All pages use semantic HTML5 elements for accessibility.</li>
+                    <li>Responsive behaviour tested at common breakpoints, media queries handle layout changes.</li>
+                    <li>Where JavaScript fetches external data (weather), API keys are loaded from a separate script and not inlined in HTML.</li>
+                </ul>
+            </section>
+            
+        </div>
+        <!-- ==== ==== ==== ==== FOOTER ==== ==== ==== ==== -->
+        <footer>
+            <p>
+                <a href="https://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fironhills.dev%2Freport.html&usermedium=all&vextwarning=&warning=1">
+                    <img style="border:0;width:88px;height:31px"
+                        src="https://jigsaw.w3.org/css-validator/images/vcss"
+                        alt="Valid CSS!" />
+                </a>
+            </p>
+            <p>&copy; <span id="date"></span> MYCELIUM. All rights reserved.</p>
+        </footer>
+    </body>
+</html>
