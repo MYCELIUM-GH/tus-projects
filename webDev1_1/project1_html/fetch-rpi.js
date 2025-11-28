@@ -1,6 +1,6 @@
 function updateStats() 
 {
-    fetch('http://127.0.0.1:5001/api/stats')
+    fetch('/api/stats')
         .then(response => response.json())
         .then(data => 
         {
