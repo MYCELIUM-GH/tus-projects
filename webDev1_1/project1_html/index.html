@@ -4,89 +4,167 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>IRONHILLS | Home</title>
-        <link rel="stylesheet" href="styles.css?v=0200261125">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="styles.css?v=1611281125">
 		<script src="https://kit.fontawesome.com/2dbede4c2f.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap">
         <link rel="icon" href="./public/images/favicon.svg" type="image/svg+xml">
     </head>
     <body>
+        <div id="loader" class="fixed inset-0 flex items-center justify-center z-50 transition-opacity duration-1000">
+            <div class=" max-w-4xl h-96 p-6 sm:p-10 rounded-lg crt-screen terminal-font text-green-400 overflow-hidden">
+                <pre id="output" class="terminal-text text-xs sm:text-sm leading-snug"></pre>
+                <span id="cursor" class="blinking-cursor">█</span>
+            </div>
+        </div>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	    <script src="https://momentjs.com/downloads/moment.min.js"></script>
         <!-- ==== ==== ==== ==== HEADER ==== ==== ==== ==== -->
-        <header>
-            <h2>IRONHILLS</h2>
-            <!-- WEATHER WIDGET -->
-            <div style="display:flex;align-items:center;gap:12px;">
-                <img id="weather-icon" src="" alt="Weather Icon">
-                <div class="weather-container-col">
-                    <div class="weather-container-row">
-                        <p id="city-name"></p>
-                        <p id="temperature"></p>
+        <main id="mainContent" class="hidden opacity-0 w-full transition-opacity duration-1000">
+            <header class="m-8">
+                <h2>IRONHILLS</h2>
+                <!-- WEATHER WIDGET -->
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <img id="weather-icon" src="" alt="Weather Icon">
+                    <div class="weather-container-col">
+                        <div class="weather-container-row">
+                            <p id="city-name"></p>
+                            <p id="temperature"></p>
+                        </div>
+                        <p id="description"></p>
                     </div>
-                    <p id="description"></p>
                 </div>
-            </div>
-            <script src="./fetch-env.js"></script>
-        </header>
-        <!-- ==== ==== ==== ==== NAVIGATION ==== ==== ==== ==== -->
-        <nav>
-            <a href="#" style="cursor:not-allowed;">
-                <i style="color:var(--clr-primary-a0);" class="fa-regular fa-house"></i>
-                <span class="desc">Homepage</span>
-            </a>
-            <a href="./stats.html">
-                <i class="fa-regular fa-chart-bar"></i>
-                <span class="desc">Stats</span>
-            </a>
-            <a href="./news.html">
-                <i class="fa-regular fa-newspaper"></i>
-                <span class="desc">News</span>
-            </a>
-            <a href="./notes.html">
-                <i class="fa-regular fa-clipboard"></i>
-                <span class="desc">Notes</span>
-            </a>
-            <a href="./report.html">
-                <i class="fa-regular fa-user"></i>
-                <span class="desc">Personal</span>
-            </a>
-        </nav>
-        <!-- ==== ==== ==== ==== MAIN CONTENT ==== ==== ==== ==== -->
-        <div class="notification">
-            <b><p>Not an actual data.</p></b>
-            <p>Please be aware that the information displayed is for demonstration purposes only.</p>
-        </div>
-        <h2 class="section-title">System vitals</h2>
-        <section class="block-row">
-            <div class="block animated">
-                <p class="block-left">SERVER</p>
-                <p class="block-right">4xArm Cortex A76@2.4GHz<span></span></p>
-                <p>CPU <span>1%</span></p>
-                <p class="block-right">RAM <span>90%</span></p>
-            </div>
-            <div class="block animated">
-                <p class="block-left">ROM</p>
-                <p class="block-right">Used <span>4.021GiB</span></p>
-                <p>Total <span>256GiB</span></p>
-                <p class="block-right">Free <span>252GiB</span></p>
-            </div>
-            <div class="block animated">
-                <p class="block-left">NETWORK</p>
-                <p class="block-right">Download <span>52kbps</span></p>
-                <p>wlan0</p>
-                <p class="block-right">Upload <span>12kbps</span></p>
-            </div>
-        </section>
-        <!-- ==== ==== ==== ==== FOOTER ==== ==== ==== ==== -->
-        <footer>
-            <p>
-                <a href="https://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fironhills.dev%2Findex.html&usermedium=all&vextwarning=&warning=1">
-                    <img style="border:0;width:88px;height:31px"
-                        src="https://jigsaw.w3.org/css-validator/images/vcss"
-                        alt="Valid CSS!" />
+                <script src="./fetch-env.js"></script>
+            </header>
+            <!-- ==== ==== ==== ==== NAVIGATION ==== ==== ==== ==== -->
+            <nav>
+                <a href="#" style="cursor:not-allowed;">
+                    <i style="color:var(--clr-primary-a0);" class="fa-regular fa-house"></i>
+                    <span class="desc">Homepage</span>
                 </a>
-            </p>
-            <p>&copy; <span id="date"></span> MYCELIUM. All rights reserved.</p>
-        </footer>
+                <a href="./stats.html">
+                    <i class="fa-regular fa-chart-bar"></i>
+                    <span class="desc">Stats</span>
+                </a>
+                <a href="./news.html">
+                    <i class="fa-regular fa-newspaper"></i>
+                    <span class="desc">News</span>
+                </a>
+                <a href="./notes.html">
+                    <i class="fa-regular fa-clipboard"></i>
+                    <span class="desc">Notes</span>
+                </a>
+                <a href="./report.html">
+                    <i class="fa-regular fa-user"></i>
+                    <span class="desc">Personal</span>
+                </a>
+            </nav>
+            <!-- ==== ==== ==== ==== MAIN CONTENT ==== ==== ==== ==== -->
+            <div class="notification">
+                <b><p>Not an actual data.</p></b>
+                <p>Please be aware that the information displayed is for demonstration purposes only.</p>
+            </div>
+            <h2 class="section-title">System vitals</h2>
+            <section class="block-row">
+                <div class="block animated">
+                    <p class="block-left">SERVER</p>
+                    <p class="block-right">4xArm Cortex A76@2.4GHz<span></span></p>
+                    <p>CPU <span>1%</span></p>
+                    <p class="block-right">RAM <span>90%</span></p>
+                </div>
+                <div class="block animated">
+                    <p class="block-left">ROM</p>
+                    <p class="block-right">Used <span>4.021GiB</span></p>
+                    <p>Total <span>256GiB</span></p>
+                    <p class="block-right">Free <span>252GiB</span></p>
+                </div>
+                <div class="block animated">
+                    <p class="block-left">NETWORK</p>
+                    <p class="block-right">Download <span>52kbps</span></p>
+                    <p>wlan0</p>
+                    <p class="block-right">Upload <span>12kbps</span></p>
+                </div>
+            </section>
+            <!-- ==== ==== ==== ==== FOOTER ==== ==== ==== ==== -->
+            <footer>
+                <p>
+                    <a href="https://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fironhills.dev%2Findex.html&usermedium=all&vextwarning=&warning=1">
+                        <img style="border:0;width:88px;height:31px"
+                            src="https://jigsaw.w3.org/css-validator/images/vcss"
+                            alt="Valid CSS!" />
+                    </a>
+                </p>
+                <p>&copy; <span id="date"></span> MYCELIUM. All rights reserved.</p>
+            </footer>
+    </main>
+    <script>
+        const outputElement = document.getElementById('output');
+        const loader = document.getElementById('loader');
+        const mainContent = document.getElementById('mainContent');
+        const cursor = document.getElementById('cursor');
+        let sequenceIndex = 0;
+        let charIndex = 0;
+        const typingDelay = 10;
+        const lineDelay = 200;
+        const bootSequence = 
+        [
+            "Initialising kernel x.x.x...",
+            "Checking filesystem integrity... [ OK ]",
+            "Loading network drivers... [ OK ]",
+            "Starting system daemon services...",
+            "  - SSH service starting... [ OK ]",
+            "  - Database service starting... [ FAIL ] (Retrying...)",
+            "  - Database service starting... [ OK ]",
+            "Loading UI components...",
+            "Establishing secure connection to mainframe...",
+            "Connection successful (Latency: 12ms)",
+            "Authentication check in progress...",
+            "User 'guest' authorised.",
+            "Loading complete. Launching web application...",
+            " "
+        ];
+
+        function typeLine() 
+        {
+            if (sequenceIndex < bootSequence.length) 
+            {
+                const currentLine = bootSequence[sequenceIndex];
+                if (charIndex < currentLine.length) 
+                {
+                    outputElement.textContent += currentLine.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeLine, typingDelay);
+                } 
+                else 
+                {
+                    outputElement.textContent += '\n';
+                    sequenceIndex++;
+                    charIndex = 0;
+                    setTimeout(typeLine, lineDelay);
+                }
+            } 
+            else { finishLoading(); }
+        }
+
+        function finishLoading() 
+        {
+            cursor.style.display = 'none';
+            setTimeout(() => 
+            {
+                loader.style.opacity = '0';
+                setTimeout(() => 
+                {
+                    loader.classList.add('hidden');
+                    mainContent.classList.remove('hidden');
+                    setTimeout(() => 
+                    {
+                        mainContent.style.opacity = '1';
+                    }, 50);
+                }, 1000);
+            }, 500);
+        }
+        window.onload = function() { typeLine(); }
+    </script>
     </body>
 </html>
