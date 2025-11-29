@@ -12,90 +12,104 @@
         <link rel="icon" href="./public/images/favicon.svg" type="image/svg+xml">
     </head>
     <body>
-        <div id="loader" class="fixed inset-0 flex items-center justify-center z-50 transition-opacity duration-1000">
+        <!-- <div id="loader" class="fixed inset-0 flex items-center justify-center z-50 transition-opacity duration-1000">
             <div class=" max-w-4xl h-96 p-6 sm:p-10 rounded-lg crt-screen terminal-font text-green-400 overflow-hidden">
                 <pre id="output" class="terminal-text text-xs sm:text-sm leading-snug"></pre>
                 <span id="cursor" class="blinking-cursor">█</span>
             </div>
-        </div>
+        </div> -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	    <script src="https://momentjs.com/downloads/moment.min.js"></script>
-        <script src="./fetch-rpi.js"></script>
         <!-- ==== ==== ==== ==== HEADER ==== ==== ==== ==== -->
-        <main id="mainContent" class="hidden opacity-0 w-full transition-opacity duration-1000">
-            <header class="m-8">
-                <h2>IRONHILLS</h2>
-                <!-- WEATHER WIDGET -->
-                <div style="display:flex;align-items:center;gap:12px;">
-                    <img id="weather-icon" src="" alt="Weather Icon">
-                    <div class="weather-container-col">
-                        <div class="weather-container-row">
-                            <p id="city-name"></p>
+        <!-- <main id="mainContent" class="hidden opacity-0 w-full transition-opacity duration-1000"> -->
+            <header class="flex flex-row md:justify-between justify-around items-center md:p-4 p-2 md:max-w-[80vw] mx-auto text-[var(--clr-light-a0)]">
+                <h2 class="font-bold md:text-3xl text-2xl text-[var(--clr-primary-a0);]">
+                    IRONHILLS
+                </h2>
+                <!-- ==== ==== WEATHER WIDGET ==== ==== -->
+                <script src="./fetch-env.js"></script>
+                <div class="flex flex-row items-center">
+                    <img class="md:w-[64px]" id="weather-icon" alt="Weather Icon">
+                    <div class="flex flex-col md:ml-8 md:text-[16px] text-[12px]">
+                        <div class="flex flex-row md:h-1/2 h-1/4 items-center">
+                            <p class="inline-block align-middle" id="city-name"></p>
                             <p id="temperature"></p>
                         </div>
-                        <p id="description"></p>
+                        <div class="flex flex-row md:h-1/2 h-1/4 items-center">
+                            <p class="inline-block align-middle text-[var(--clr-surface-tonal-a30)]" id="description"></p>
+                        </div>
                     </div>
                 </div>
-                <script src="./fetch-env.js"></script>
             </header>
             <!-- ==== ==== ==== ==== NAVIGATION ==== ==== ==== ==== -->
-            <nav>
-                <a href="#" style="cursor:not-allowed;">
-                    <i style="color:var(--clr-primary-a0);" class="fa-regular fa-house"></i>
-                    <span class="desc">Homepage</span>
+            <nav id="navbar" class="justify-center w-full h-16 text-[var(--clr-light-a0)] md:text-3xl text-2xl flex items-center gap-4">
+                <!-- ==== ==== HOME LINK ==== ==== -->
+                <a href="#" class="group flex items-center p-4 hover:text-white transition-colors duration-400">
+                    <i class="fa-regular fa-house"></i>
+                    <span class="text-base whitespace-nowrap transition-all duration-500 ease-in-out opacity-0 max-w-0 overflow-hidden md:group-hover:max-w-xs md:group-hover:opacity-100 md:group-hover:pr-1 md:group-hover:ml-2">
+                        Homepage
+                    </span>
                 </a>
-                <a href="./stats">
+                <!-- ==== ==== SERVICES LINK ==== ==== -->
+                <a href="./stats" class="group flex items-center p-4 hover:text-white transition-colors duration-400">
                     <i class="fa-regular fa-chart-bar"></i>
-                    <span class="desc">Stats</span>
+                    <span class="text-base whitespace-nowrap transition-all duration-500 ease-in-out opacity-0 max-w-0 overflow-hidden md:group-hover:max-w-xs md:group-hover:opacity-100 md:group-hover:pr-1 md:group-hover:ml-2">
+                        Services
+                    </span>
                 </a>
-                <a href="./news">
+                <!-- ==== ==== NEWS LINK ==== ==== -->
+                <a href="#" class="group flex items-center p-4 hover:text-white transition-colors duration-400">
                     <i class="fa-regular fa-newspaper"></i>
-                    <span class="desc">News</span>
+                    <span class="text-base whitespace-nowrap transition-all duration-500 ease-in-out opacity-0 max-w-0 overflow-hidden md:group-hover:max-w-xs md:group-hover:opacity-100 md:group-hover:pr-1 md:group-hover:ml-2">
+                        News
+                    </span>
                 </a>
-                <a href="./notes">
+                <!-- ==== ==== NOTES LINK ==== ==== -->
+                <a href="#" class="group flex items-center p-4 hover:text-white transition-colors duration-400">
                     <i class="fa-regular fa-clipboard"></i>
-                    <span class="desc">Notes</span>
+                    <span class="text-base whitespace-nowrap transition-all duration-500 ease-in-out opacity-0 max-w-0 overflow-hidden md:group-hover:max-w-xs md:group-hover:opacity-100 md:group-hover:pr-1 md:group-hover:ml-2">
+                        Notes
+                    </span>
                 </a>
-                <a href="./report">
+                <a href="#" class="group flex items-center p-4 hover:text-white transition-colors duration-400">
                     <i class="fa-regular fa-user"></i>
-                    <span class="desc">Personal</span>
+                    <span class="text-sm ml-2 whitespace-nowrap transition-all duration-300 ease-in-out opacity-0 max-w-0 overflow-hidden group-hover:max-w-xs group-hover:opacity-100 group-hover:pr-1">
+                        Personal
+                    </span>
                 </a>
             </nav>
             <!-- ==== ==== ==== ==== MAIN CONTENT ==== ==== ==== ==== -->
-            <h2 class="section-title">System vitals</h2>
-            <section class="block-row">
-                <div class="block animated">
-                    <p class="block-left">SERVER</p>
-                    <p class="block-right">4xArm Cortex A76@2.4GHz<span></span></p>
+            <h2 class="p-4 text-center text-[var(--clr-light-a0)] text-2xl">
+                System vitals
+            </h2>
+            <!-- ==== ==== BLOCKS ==== ==== -->
+            <script src="./fetch-rpi.js"></script>
+            <div class="flex flex-col md:flex-row justify-center gap-8 p-4">
+                <div class="grid grid-cols-2 place-content-between gap-8 p-4 block animated">
+                    <p>SERVER</p>
+                    <p>4x Arm Cortex A76 2.4GHz</p>
                     <p id="cpu-stat">...</p>
                     <p id="ram-stat">...</p>
                 </div>
-                <div class="block animated">
-                    <p class="block-left">ROM</p>
-                    <p class="block-right">Used <span>4.021GiB</span></p>
-                    <p>Total <span>256GiB</span></p>
-                    <p class="block-right">Free <span>252GiB</span></p>
+                <div class="grid grid-cols-2 place-content-between gap-8 p-4 block animated">
+                    <p>STORAGE</p>
+                    <p id="disk-total">...</p>
+                    <p id="disk-used">...</p>
+                    <p id="disk-free">...</p>
                 </div>
-                <div class="block animated">
-                    <p class="block-left">NETWORK</p>
-                    <p class="block-right">Download <span>52kbps</span></p>
-                    <p>wlan0</p>
-                    <p class="block-right">Upload <span>12kbps</span></p>
+                <div class="grid grid-cols-2 place-content-between gap-8 p-4 block animated">
+                    <p>NETWORK</p>
+                    <p>lan0</p>
+                    <p id="net-download">...</p>
+                    <p id="net-upload">...</p>
                 </div>
-            </section>
+            </div>
             <!-- ==== ==== ==== ==== FOOTER ==== ==== ==== ==== -->
             <footer>
-                <p>
-                    <a href="https://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fironhills.dev%2Findex.html&usermedium=all&vextwarning=&warning=1">
-                        <img style="border:0;width:88px;height:31px"
-                            src="https://jigsaw.w3.org/css-validator/images/vcss"
-                            alt="Valid CSS!" />
-                    </a>
-                </p>
                 <p>&copy; <span id="date"></span> MYCELIUM. All rights reserved.</p>
             </footer>
     </main>
-    <script>
+    <!-- <script>
         const outputElement = document.getElementById('output');
         const loader = document.getElementById('loader');
         const mainContent = document.getElementById('mainContent');
@@ -162,6 +176,6 @@
             }, 500);
         }
         window.onload = function() { typeLine(); }
-    </script>
+    </script> -->
     </body>
 </html>

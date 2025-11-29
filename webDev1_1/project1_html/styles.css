@@ -127,173 +127,24 @@ body
     }
 
     /* #endregion LOADER */
-
-    /* #region HEADER */
-
-    header 
-    {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        color: var(--clr-light-a0);
-    }
-        
-        header h2 
-        {
-            font-size: 2em;
-            color: var(--clr-primary-a0);
-        }
-        
-        .weather-container-col
-        {
-            display: flex;
-            flex-direction: column;
-            align-items:flex-start;
-            max-height: 50px;
-        }
-        
-        .weather-container-row
-        {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            gap: 0px;
-            text-align: left;
-            font-size: 1em;
-        }
-            
-            #weather-icon 
-            {
-                vertical-align: middle;
-            }
-
-            #city-name, #temperature 
-            {
-                vertical-align: middle;
-                margin: 0;
-            }
-            
-            #city-name::after 
-            {
-                content: ",\00a0";
-            }
-            
-            #description 
-            {
-                padding: 8px 0;
-                margin: 0;
-                color: var(--clr-surface-tonal-a30);
-            }
-    /* #endregion HEADER */
     
-    /* #region NAVBAR */
-
-    nav 
-    {
-        display: flex;
-        justify-content: center;
-        padding: 8px;
-        overflow: hidden;
-    }
-
-        nav a 
-        {
-            color: var(--clr-light-a0);
-            font-size: 24px;
-            text-decoration: none;
-            transition: transform 0.5s ease;
-            padding: 8px 6vw;
-        }
-
-        nav a:hover 
-        {
-            transform: scale(120%);
-        }
-        nav a i
-        {
-            color: var(--clr-light-a0);
-        }
-        nav a .desc
-        {
-            display: inline-block;
-            max-width: 0;
-            overflow: hidden;
-            white-space: nowrap;
-            font-size: 14px;
-            opacity: 0;
-            transition: max-width 0.5s ease, opacity 0.5s ease;
-        }
-
-        nav a:hover .desc,
-        nav a:focus .desc
-        {
-            max-width: 240px;
-            opacity: 1;
-            
-        }
-    /* #endregion NAVBAR */
-
     /* #region BLOCKS */
           
     .block 
     {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px 16px;
-        width: 100%;
-        cursor: default;
-        color: var(--clr-light-a0);
-        padding: 16px;
+        background-color: var(--clr-surface-a0);
         border: var(--clr-surface-a30) 1px solid;
         border-radius: 16px;
+        color: var(--clr-light-a0);
+        cursor: default;
         font-size: 16px;
     }
-
-    .block-row 
-    {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        width: 60vw;
-        gap: 20px;
-        padding: 8px 20px;
-        box-sizing: border-box;
-        margin-inline: auto;
-    }
-
-    .block-col
-    {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 60vw;
-        gap: 8px;
-        padding: 2px 20px;
-        box-sizing: border-box;
-        margin-inline: auto;
-    }
-
+        .block *:nth-child(1) { font-weight: bold; }
+        .block *:nth-child(2) { color: var(--clr-surface-a30); }
         .block.animated:hover
         {
             border: 1px solid var(--clr-surface-a30);
             animation: borderShift 6s ease-in-out infinite alternate;
-        }
-
-        .block p 
-        {
-            margin: 0;
-        }
-
-        .block-left 
-        {
-            text-align: left;
-            font-weight: bold;
-        }
-
-        .block-right 
-        {
-            text-align: right;
-            color: var(--clr-surface-a50);
         }
 
     .bulb
@@ -383,83 +234,6 @@ body
     }
 
     /* #endregion FOOTER */
-
-    /* #region MEDIA QUERIES */
-
-    @media (max-width: 900px)
-    {
-            header h2 
-            {
-                font-size: 1.5em;
-            }
-
-            #weather-icon
-
-            {
-                height: 32px;
-                width: 32px;
-                vertical-align: middle;
-            }
-
-            #city-name, #temperature, #description
-            {
-                font-size: 0.8em;
-                padding: 2px;
-                text-align: left;
-            }
-
-            nav a 
-            {
-                font-size: 20px;
-                padding: 8px 4vw;
-            }
-                nav a .desc
-                {
-                    display: none;
-                }
-
-            .block-row 
-            {
-                flex-direction: column;
-                width: 80vw;
-                align-items: center;
-                justify-content: center;
-                padding: 8px 12px;
-            }
-
-            .block-col
-            {
-                width: 80vw;
-            }
-
-            .notification 
-            {
-                width: 80vw;
-                margin: auto;
-            }
-
-            .block 
-            {
-                grid-template-columns: 1fr;
-                gap: 12px;
-                padding: 12px;
-            }
-
-            .block,
-            .block-left,
-            .block-right 
-            {
-                text-align: center;
-            }
-
-            .reddit
-            {
-                width: 80vw;
-                margin: auto;
-            }
-        }
-
-    /* #endregion MEDIA QUERIES */
     
     /* #region ANIMATIONS */
 

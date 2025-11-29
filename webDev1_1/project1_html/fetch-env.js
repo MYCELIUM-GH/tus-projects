@@ -14,9 +14,7 @@ async function weatherFn(cName)
 
 function weatherShowFn(data) 
 {
-	const desc = data.weather[0].description || '';
-
-    const formattedDesc = desc
+    const formattedDesc = data.weather[0].description
         .split(' ')
         .map(w => w.charAt(0).toUpperCase() + w.slice(1))
         .join(' ');
@@ -27,7 +25,7 @@ function weatherShowFn(data)
 		format('YYYY'));
     
     $('#temperature').
-		html(`${Math.round(data.main.temp)}°C`);
+		html(`, ${Math.round(data.main.temp)}°C`);
     
     $('#description').text(formattedDesc);
 
