@@ -22,7 +22,6 @@ function updateStats()
             }
 
         })
-        .catch(error => console.error('Error fetching stats:', error));
 }
 
 updateStats();
