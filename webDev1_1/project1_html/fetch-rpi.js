@@ -1,6 +1,6 @@
 function updateStats() 
 {
-    fetch('/api/stats')
+    fetch('https://ironhills.dev/api/stats') 
         .then(response => response.json())
         .then(data => 
         {
