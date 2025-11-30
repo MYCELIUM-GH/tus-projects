@@ -7,27 +7,27 @@ async function updateStats()
 
         const data = await response.json();
         
-        document.getElementById('cpu-stat')?.innerHTML = 
+        document.getElementById('cpu-stat').innerHTML = 
             `CPU: ${data.cpu_temp}°C / ${data.cpu_usage}%`;
         
-        document.getElementById('ram-stat')?.innerHTML = 
+        document.getElementById('ram-stat').innerHTML = 
             `RAM: ${data.ram_used_gb} / ${data.ram_total_gb} GB`;
 
-        document.getElementById('disk-total')?.innerHTML = 
+        document.getElementById('disk-total').innerHTML = 
             `NVME: ${data.disk_total_gb} GB`;
 
-        document.getElementById('disk-used')?.innerHTML = 
+        document.getElementById('disk-used').innerHTML = 
             `Used: ${data.disk_used_gb} GB`;
         
         const freeSpace = data.disk_total_gb - data.disk_used_gb;
 
-        document.getElementById('disk-free')?.innerHTML = 
+        document.getElementById('disk-free').innerHTML = 
             `Free: ${freeSpace} GB`;
 
-        document.getElementById('net-download')?.innerHTML = 
+        document.getElementById('net-download').innerHTML = 
             `Download: ${data.download_kbs} kBps`;
 
-        document.getElementById('net-upload')?.innerHTML = 
+        document.getElementById('net-upload').innerHTML = 
             `Upload: ${data.upload_kbs} kBps`;
         
         const spotifyStatElement = document.getElementById('spotify-stat');
