@@ -1,4 +1,4 @@
-# 🌟 TUS Portfolio
+# <img src="https://raw.githubusercontent.com/MYCELIUM-GH/tus-projects/refs/heads/main/images/portfolio.svg" width="32"> TUS Portfolio
 
 A collection of projects developed for my WebDev, GameDev, and Java modules.
 (and a bit more)
