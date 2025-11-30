@@ -12,9 +12,8 @@ A collection of projects developed for my WebDev, GameDev, and Java modules.
 
 ---
 
-<a name="web-dev">
+<a name="web-dev" />
 ## 🌐 **Web App Development with AI 1.1**
-</a>
 
 Showcasing my skills in full-stack development.
 
