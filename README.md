@@ -1,13 +1,14 @@
-# <img src="https://raw.githubusercontent.com/MYCELIUM-GH/tus-projects/refs/heads/main/images/portfolio.svg" width="32"> TUS Portfolio
+# <img src="https://raw.githubusercontent.com/MYCELIUM-GH/tus-projects/refs/heads/main/images/portfolio.svg" width="26"> TUS Portfolio
 
 A collection of projects developed for my WebDev, GameDev, and Java modules.
-(and a bit more)
+
+_(and a bit more)_
 
 ---
 
-## 🚀 **Quick Navigation**
+#### <img src="https://raw.githubusercontent.com/MYCELIUM-GH/tus-projects/refs/heads/main/images/navigation.svg" width="26"> Quick Navigation
 
-| Category | Description | Key Technologies |
+| Module | Description | Key technologies |
 | :--- | :--- | :--- |
 | [🌐 Web App Development with AI 1.1](#webDev) | Websites, front-end, and back-end applications. | HTML5, CSS3, JavaScript |
 
