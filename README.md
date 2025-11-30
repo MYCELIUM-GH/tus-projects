@@ -8,13 +8,13 @@ A collection of projects developed for my WebDev, GameDev, and Java modules.
 
 | Category | Description | Key Technologies |
 | :--- | :--- | :--- |
-| [🌐 Web App Development with AI 1.1](#web-dev) | Websites, front-end, and back-end applications. | HTML5, CSS3, JavaScript |
+| [🌐 Web App Development with AI 1.1](#webDev) | Websites, front-end, and back-end applications. | HTML5, CSS3, JavaScript |
 
 ---
 
-<a name="web-dev" />
-## 🌐 **Web App Development with AI 1.1**
+<a name="webDev" />
 
+## 🌐 Web App Development with AI 1.1
 Showcasing my skills in full-stack development.
 
 ### **1. [Homelab stats showcase]**
