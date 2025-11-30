@@ -12,18 +12,19 @@
         <link rel="icon" href="./public/images/favicon.svg" type="image/svg+xml">
     </head>
     <body>
-        <!-- <div id="loader" class="fixed inset-0 flex items-center justify-center z-50 transition-opacity duration-1000">
-            <div class=" max-w-4xl h-96 p-6 sm:p-10 rounded-lg crt-screen terminal-font text-green-400 overflow-hidden">
+        <div id="loader" class="fixed inset-0 flex items-center justify-center z-50 transition-opacity duration-1000">
+            <div class=" w-full h-full p-6 rounded-lg crt-screen terminal-font text-[var(--clr-primary-a0)] overflow-hidden">
                 <pre id="output" class="terminal-text text-xs sm:text-sm leading-snug"></pre>
                 <span id="cursor" class="blinking-cursor">█</span>
             </div>
-        </div> -->
+        </div>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+        
         <!-- ==== ==== ==== ==== HEADER ==== ==== ==== ==== -->
-        <!-- <main id="mainContent" class="hidden opacity-0 w-full transition-opacity duration-1000"> -->
+        <main id="mainContent" class="hidden opacity-0 w-full transition-opacity duration-1000">
             <header class="flex flex-row md:justify-between justify-around items-center md:p-4 p-2 md:max-w-[80vw] mx-auto text-[var(--clr-light-a0)]">
-                <h2 class="font-bold md:text-3xl text-2xl text-[var(--clr-primary-a0);]">
+                <h2 class="font-bold md:text-3xl text-2xl text-[var(--clr-primary-a0)]">
                     IRONHILLS
                 </h2>
                 <!-- ==== ==== WEATHER WIDGET ==== ==== -->
@@ -119,74 +120,7 @@
             <footer>
                 <p>&copy; <span id="date"></span> MYCELIUM. All rights reserved.</p>
             </footer>
-    </main>
-    <!-- <script>
-        const outputElement = document.getElementById('output');
-        const loader = document.getElementById('loader');
-        const mainContent = document.getElementById('mainContent');
-        const cursor = document.getElementById('cursor');
-        let sequenceIndex = 0;
-        let charIndex = 0;
-        const typingDelay = 10;
-        const lineDelay = 200;
-        const bootSequence = 
-        [
-            "Initialising kernel x.x.x...",
-            "Checking filesystem integrity... [ OK ]",
-            "Loading network drivers... [ OK ]",
-            "Starting system daemon services...",
-            "  - SSH service starting... [ OK ]",
-            "  - Database service starting... [ FAIL ] (Retrying...)",
-            "  - Database service starting... [ OK ]",
-            "Loading UI components...",
-            "Establishing secure connection to mainframe...",
-            "Connection successful (Latency: 12ms)",
-            "Authentication check in progress...",
-            "User 'guest' authorised.",
-            "Loading complete. Launching web application...",
-            " "
-        ];
-
-        function typeLine() 
-        {
-            if (sequenceIndex < bootSequence.length) 
-            {
-                const currentLine = bootSequence[sequenceIndex];
-                if (charIndex < currentLine.length) 
-                {
-                    outputElement.textContent += currentLine.charAt(charIndex);
-                    charIndex++;
-                    setTimeout(typeLine, typingDelay);
-                } 
-                else 
-                {
-                    outputElement.textContent += '\n';
-                    sequenceIndex++;
-                    charIndex = 0;
-                    setTimeout(typeLine, lineDelay);
-                }
-            } 
-            else { finishLoading(); }
-        }
-
-        function finishLoading() 
-        {
-            cursor.style.display = 'none';
-            setTimeout(() => 
-            {
-                loader.style.opacity = '0';
-                setTimeout(() => 
-                {
-                    loader.classList.add('hidden');
-                    mainContent.classList.remove('hidden');
-                    setTimeout(() => 
-                    {
-                        mainContent.style.opacity = '1';
-                    }, 50);
-                }, 1000);
-            }, 500);
-        }
-        window.onload = function() { typeLine(); }
-    </script> -->
+        </main>
+        <script src="./loader.js"></script>
     </body>
 </html>
