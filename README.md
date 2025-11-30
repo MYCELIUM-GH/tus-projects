@@ -1,4 +1,4 @@
-<h1 style="color: #00fa6c"🌟 TUS Project Portfolio</h1>
+# 🌟 TUS Portfolio
 
 A collection of projects developed for my WebDev, GameDev, and Java modules.
 (and a bit more)
