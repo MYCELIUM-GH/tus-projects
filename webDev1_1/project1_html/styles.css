@@ -141,6 +141,7 @@ body
     }
         .block *:nth-child(1) { font-weight: bold; }
         .block *:nth-child(2) { color: var(--clr-surface-a30); }
+        .block *:nth-child(2n) { text-align: end;}
         .block.animated:hover
         {
             border: 1px solid var(--clr-surface-a30);
