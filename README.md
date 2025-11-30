@@ -2,6 +2,7 @@
 
 A collection of projects developed for my WebDev, GameDev, and Java modules.
 (and a bit more)
+
 ---
 
 ## 🚀 **Quick Navigation**
