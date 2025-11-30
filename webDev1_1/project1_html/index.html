@@ -58,7 +58,7 @@
                     </span>
                 </a>
                 <!-- ==== ==== NEWS LINK ==== ==== -->
-                <a href="#" class="group flex items-center p-4 hover:text-white transition-colors duration-400">
+                <a href="#news" class="group flex items-center p-4 hover:text-white transition-colors duration-400">
                     <i class="fa-regular fa-newspaper"></i>
                     <span class="text-base whitespace-nowrap transition-all duration-500 ease-in-out opacity-0 max-w-0 overflow-hidden md:group-hover:max-w-xs md:group-hover:opacity-100 md:group-hover:pr-1 md:group-hover:ml-2">
                         News
@@ -79,10 +79,10 @@
                 </a>
             </nav>
             <!-- ==== ==== ==== ==== MAIN CONTENT ==== ==== ==== ==== -->
+            <!-- ==== ==== VITALS ==== ==== -->
             <h2 class="p-4 text-center text-[var(--clr-light-a0)] text-2xl">
                 System vitals
             </h2>
-            <!-- ==== ==== BLOCKS ==== ==== -->
             <script src="./fetch-rpi.js"></script>
             <div class="flex flex-col md:flex-row md:max-w-[80vw] mx-auto justify-center gap-8 p-4">
                 <div class="grid grid-cols-2 md:w-1/3 place-content-between gap-8 p-4 block animated">
@@ -102,6 +102,17 @@
                     <p>lan0</p>
                     <p id="net-download">...</p>
                     <p id="net-upload">...</p>
+                </div>
+            </div>
+            <!-- ==== ==== NEWS ==== ==== -->
+            <h2 id="news" class="p-4 text-center text-[var(--clr-light-a0)] text-2xl">
+                News
+            </h2>
+            <div class="flex flex-col md:flex-row md:w-[80vw] mx-auto justify-center gap-8 p-4">
+                <div class="flex flex-col reddit posts">
+                    <div class="block-col">
+                        <script src="./fetch-reddit.js"></script>
+                    </div>
                 </div>
             </div>
             <!-- ==== ==== ==== ==== FOOTER ==== ==== ==== ==== -->

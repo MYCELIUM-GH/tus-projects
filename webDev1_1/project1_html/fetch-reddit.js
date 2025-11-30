@@ -1,4 +1,4 @@
-const redditUrl = 'https://www.reddit.com/r/selfhosted/top.json?limit=5&t=day';
+const redditUrl = 'https://www.reddit.com/user/terrorizesur/m/ironhills/top.json?limit=10&t=day';
 
 function createPostElement(postData) 
 {
@@ -41,7 +41,7 @@ function createPostElement(postData)
 
 function displayRedditPosts(data) 
 {
-    const container = document.querySelector('.reddit.r-selfhosted'); 
+    const container = document.querySelector('.reddit.posts'); 
 
     data.data.children.forEach(post => 
     {
@@ -55,7 +55,7 @@ fetch(redditUrl)
     .then(data => { displayRedditPosts(data); })
     .catch(() => 
     {
-        const container = document.querySelector('.reddit.r-selfhosted');
+        const container = document.querySelector('.reddit.posts');
         if (container) 
         {
              container.innerHTML += '<p style="text-align:center;">Nothing to show;p</p>';
