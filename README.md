@@ -29,6 +29,19 @@ Showcasing my skills in full-stack development.
 
 ---
 
+## 🔌 Digitalisation for Connected Devices 1.2
+Showcasing my skills in networking, Python and C++.
+
+### **[RPI to Thingspeak]**
+
+* **Status:** ***Completed*** / *In Progress* / *Archived*
+* **Technologies Used:** `Python`, `Thingspeak`, `SenseHat`
+* **Description:** Simple write/read script. Using requests Python library sends data to Thingspeak and prints it in console after requesting back.
+
+> **🔗 Link:** [Website](https://thingspeak.mathworks.com/channels/3258296) | [Project Folder](https://github.com/MYCELIUM-GH/tus-projects/tree/main/webDev1_1/project1_html)
+
+---
+
 ## ℹ️ **About Me**
 
 * **Student:** A00345247, Oleh Dorofieiev
