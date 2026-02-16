@@ -1,7 +1,7 @@
 # ==== ==== IMPORTS ==== ====
 from sense_hat import SenseHat
 import requests
-# ==== ==== CONF ==== ====
+# ==== ==== CONFIG ==== ====
 URL = "https://api.thingspeak.com/update"
 WRITE_KEY = 'IABFSW5TZMPAWRSD'
 READ_KEY = 'D0M58PFDLIFHL53J'
@@ -17,13 +17,13 @@ while True:
     else:
         lastHumidity = humidity
     # WRITE ->
-    payload = {
+    write_payload = {
         'api_key': WRITE_KEY,
         'field1': temp,
         'field2': humidity,
         'field3': pressure
     }
-    response = requests.get(URL, params=payload)
+    write_response = requests.get(URL, params=write_payload)
     # READ ->
     read_payload = {
         'api_key': READ_KEY,
@@ -32,4 +32,9 @@ while True:
         'field3': 'pressure'
     }
     read_response = requests.get(URL, params=read_payload)
-    print(read_response.text)
+    if read_response.text == 1:
+        SenseHat().show_message("Temp: " + str(temp), text_colour=[255, 0, 0])
+        SenseHat().show_message("Humidity: " + str(humidity), text_colour=[0, 255, 0])
+        SenseHat().show_message("Pressure: " + str(pressure), text_colour=[0, 0, 255])
+    else:
+        SenseHat().clear()
