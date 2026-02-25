@@ -1,5 +1,5 @@
 # ==== ==== IMPORTS ==== ====
-from sense_hat import SenseHat
+from sense_emu import SenseHat
 import requests
 # ==== ==== CONFIG ==== ====
 URL = "https://api.thingspeak.com/update"
@@ -25,16 +25,8 @@ while True:
     }
     write_response = requests.get(URL, params=write_payload)
     # READ ->
-    read_payload = {
-        'api_key': READ_KEY,
-        'field1': 'temp',
-        'field2': 'humidity',
-        'field3': 'pressure'
-    }
-    read_response = requests.get(URL, params=read_payload)
-    if read_response.text == 1:
-        SenseHat().show_message("Temp: " + str(temp), text_colour=[255, 0, 0])
-        SenseHat().show_message("Humidity: " + str(humidity), text_colour=[0, 255, 0])
-        SenseHat().show_message("Pressure: " + str(pressure), text_colour=[0, 0, 255])
+    read_response = requests.get(URL, params={'api_key': READ_KEY})
+    if int(read_response.text) == 1:
+        SenseHat().set_pixels([255, 255, 255] * 64)
     else:
         SenseHat().clear()
