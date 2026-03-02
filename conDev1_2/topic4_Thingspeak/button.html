@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send request to Thingspeak</title>
+</head>
+<body>
+    <div 
+        style=
+        "
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh;
+        "
+    >
+        <input 
+            type="button" 
+            value="Show on LED matrix" 
+            onclick="sendData()" 
+            style="font-size: 24px; padding: 10px 20px;"
+        >
+    </div>
+    <script>
+        function sendData() {
+            fetch('https://api.thingspeak.com/update?api_key=FS3WXHYXR1H0CVJT&field1=1');
+            setTimeout(() => {
+                fetch('https://api.thingspeak.com/update?api_key=FS3WXHYXR1H0CVJT&field1=0');
+            }, 20000);
+        }
+    </script>
+</body>
