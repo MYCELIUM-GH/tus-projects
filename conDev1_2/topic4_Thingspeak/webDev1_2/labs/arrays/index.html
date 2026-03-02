@@ -1,12 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Arrays in JS</title>
-    <script src="./scripts/scripts.js"></script>
-</head>
-<body>
-    <h1> Arrays - JavaScript</h1>
-    <h2> List of Students enrolled in this course:</h2>
-    <ol id="studentList"></ol>
-</body>
+<html lang="en"> 
+    <head>
+        <title>Arrays in JS</title>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script src="/scripts.js"></script>
+    </head>
+    <body>
+        <div class="w3-container w3-teal w3-center">
+            <h1> Arrays in JavaScript</h1>   
+        </div>
+
+        <div class=" w3-row ">
+
+            <div class=" w3-container w3-half">
+                <div class="w3-section">
+                    <label  for="student_name">Student Name:</label>
+                    <input class="w3-padding w3-border w3-round" id="student_name" type="text"/>
+                    <button class="w3-button w3-black" id="add_btn">Add</button>
+                </div>
+
+                <div class="w3-section">
+                    <button class="w3-button w3-red w3-block" id="random_btn">Select a random student</button>
+                    <div class="w3-card-2"> 
+                        <div class="w3-container w3-center" id="selected_student"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-container w3-half">
+                <p> List of Students enrolled in this course:</p>
+                <ul class="w3-ul w3-hoverable w3-card-2" id="students_list" >
+                    <!-- we will get the student names later -->
+                </ul>
+            </div> 
+        </div>
+    </body>
 </html>
